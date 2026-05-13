@@ -10,9 +10,19 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@sanity/client": "^7.22.0",
+    "@sanity/image-url": "2",
+    "@sanity/vision": "5",
+    "clsx": "^2.1.1",
+    "lenis": "^1.3.23",
+    "motion": "^12.38.0",
     "next": "16.2.6",
+    "next-sanity": "^12.4.5",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sanity": "5",
+    "styled-components": "6",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
@@ -21,6 +31,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
