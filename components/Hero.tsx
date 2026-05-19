@@ -21,7 +21,7 @@ export default function Hero() {
           <motion.div {...fadeUp} transition={{ duration: 0.5 }}>
             <span className="inline-flex items-center gap-2 border border-border-gray bg-white rounded-full px-4 py-1.5 text-sm font-medium text-ieee-blue mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-accent-cyan inline-block animate-pulse" />
-              University Student Branch Chapter
+              UCSC Student Branch Chapter
             </span>
           </motion.div>
 
@@ -40,7 +40,7 @@ export default function Hero() {
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            IEEE Computer Society Student Branch is a community of passionate students building technical excellence through workshops, hackathons, research, and industry collaborations.
+            IEEE Computer Society UCSC Student Branch Chapter is a community of passionate students building technical excellence through workshops, hackathons, research, and industry collaborations.
           </motion.p>
 
           <motion.div

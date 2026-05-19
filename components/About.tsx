@@ -79,7 +79,7 @@ export default function About() {
             </h3>
 
             <p className="font-sans text-text-gray text-lg leading-relaxed mb-8">
-              We are the official IEEE Computer Society chapter of our university dedicated to advancing computing knowledge, innovation, leadership, and collaboration among students. Our mission is to bridge the gap between academic learning and industry demands.
+              We are the official IEEE Computer Society chapter of UCSC dedicated to advancing computing knowledge, innovation, leadership, and collaboration among students. Our mission is to bridge the gap between academic learning and industry demands.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-10">

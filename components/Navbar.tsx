@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { motion } from 'motion/react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -11,7 +12,6 @@ const navLinks = [
   { label: 'Timeline', href: '#timeline' },
   { label: 'Events', href: '#events' },
   { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -59,7 +59,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 flex-shrink-0">
             <img 
-              src="https://placehold.co/120x40/00629b/FFFFFF?text=IEEE+CS+Logo" 
+              src="/society_logo01.png" 
               alt="IEEE Computer Society Logo" 
               className="h-10 w-auto"
             />
@@ -68,13 +68,13 @@ export default function Navbar() {
                 IEEE Computer Society
               </span>
               <span className="font-sans text-xs text-text-gray block">
-                University Student Branch
+                UCSC Student Branch Chapter
               </span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-1 bg-[#DFE9F2]/60 backdrop-blur-md px-1.5 py-1.5 rounded-full shadow-sm border border-white/20">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.slice(1)
               return (
@@ -82,15 +82,19 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'font-sans text-sm font-medium transition-colors duration-200 relative pb-1',
+                    'font-sans text-[13px] font-semibold transition-colors duration-300 relative px-5 py-2 rounded-full',
                     isActive
-                      ? 'text-ieee-blue'
-                      : 'text-text-gray hover:text-navy'
+                      ? 'text-white'
+                      : 'text-navy hover:text-ieee-blue'
                   )}
                 >
-                  {link.label}
+                  <span className="relative z-10">{link.label}</span>
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-ieee-blue rounded-full" />
+                    <motion.span 
+                      layoutId="active-nav-pill"
+                      className="absolute inset-0 bg-ieee-blue rounded-full shadow-md z-0" 
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
                   )}
                 </a>
               )
@@ -103,7 +107,7 @@ export default function Navbar() {
               href="#contact"
               className="hidden md:inline-flex items-center justify-center bg-ieee-blue text-white font-sans text-sm font-medium px-6 py-2.5 rounded-full hover:bg-navy transition-colors duration-200"
             >
-              Join Us
+              Contact Us
             </a>
             <button
               onClick={() => setMobileOpen(true)}
@@ -153,7 +157,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="w-full inline-flex items-center justify-center bg-ieee-blue text-white font-sans text-lg font-medium px-6 py-4 rounded-xl hover:bg-white hover:text-navy transition-colors duration-300"
               >
-                Join Our Community
+                Contact Us
               </a>
             </div>
           </div>

@@ -84,8 +84,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-sans text-sm font-semibold text-text-gray mb-1">Email</p>
-                    <a href="mailto:ieeecs@university.edu" className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors">
-                      ieeecs@university.edu
+                    <a href="mailto:ieeecs@ucsc.cmb.ac.lk" className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors">
+                      ieeecs@ucsc.cmb.ac.lk
                     </a>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function Contact() {
                   <div>
                     <p className="font-sans text-sm font-semibold text-text-gray mb-1">Location</p>
                     <p className="font-sans font-medium text-navy">
-                      Faculty of Computing,<br />University Campus
+                      University of Colombo School of Computing,<br />UCSC
                     </p>
                   </div>
                 </div>
@@ -131,12 +131,15 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Embedded Map Placeholder */}
+            {/* Embedded Map */}
             <div className="rounded-2xl border border-border-gray overflow-hidden shadow-sm h-64 relative bg-white">
-               <img 
-                src="https://placehold.co/800x400/E2E8F0/0A192F?text=Embedded+Map" 
-                alt="Map Location" 
-                className="w-full h-full object-cover"
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.8108888680263!2d79.85876387483526!3d6.902084093097214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25963120b1509%3A0x2db2c18a68712863!2sUniversity%20of%20Colombo%20School%20of%20Computing%20(UCSC)!5e1!3m2!1sen!2slk!4v1779161693936!5m2!1sen!2slk" 
+                className="w-full h-full absolute inset-0"
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </motion.div>

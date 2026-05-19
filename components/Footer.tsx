@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-2 pr-4">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="https://placehold.co/120x40/00629b/FFFFFF?text=IEEE+CS+Logo" 
+                src="/society_logo01.png" 
                 alt="IEEE Computer Society Logo" 
                 className="h-8 w-auto brightness-0 invert opacity-90"
               />
@@ -21,7 +21,7 @@ export default function Footer() {
                   IEEE Computer Society
                 </span>
                 <span className="font-sans text-xs text-white/70 block">
-                  University Student Branch
+                  UCSC Student Branch Chapter
                 </span>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-sans text-white/50 text-sm">
-            © {currentYear} IEEE Computer Society Student Branch. All rights reserved.
+            © {currentYear} IEEE Computer Society UCSC Student Branch Chapter. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="font-sans text-white/50 hover:text-white transition-colors text-sm">Privacy Policy</a>

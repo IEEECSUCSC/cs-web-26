@@ -26,8 +26,8 @@ const team = [
   },
   {
     role: 'Webmaster',
-    name: 'Dulina Gunasinghe',
-    image: 'https://placehold.co/400x400/0A192F/FFFFFF?text=DG',
+    name: 'Alex Perera',
+    image: 'https://placehold.co/400x400/0A192F/FFFFFF?text=AP',
   },
   {
     role: 'Event Coordinator',
