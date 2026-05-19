@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { motion } from 'motion/react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -74,7 +73,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#DFE9F2]/60 backdrop-blur-md px-1.5 py-1.5 rounded-full shadow-sm border border-white/20">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.slice(1)
               return (
@@ -82,19 +81,15 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'font-sans text-[13px] font-semibold transition-colors duration-300 relative px-5 py-2 rounded-full',
+                    'font-sans text-sm font-medium transition-colors duration-200 relative pb-1',
                     isActive
-                      ? 'text-white'
-                      : 'text-navy hover:text-ieee-blue'
+                      ? 'text-ieee-blue'
+                      : 'text-text-gray hover:text-navy'
                   )}
                 >
-                  <span className="relative z-10">{link.label}</span>
+                  {link.label}
                   {isActive && (
-                    <motion.span 
-                      layoutId="active-nav-pill"
-                      className="absolute inset-0 bg-ieee-blue rounded-full shadow-md z-0" 
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-ieee-blue rounded-full" />
                   )}
                 </a>
               )
