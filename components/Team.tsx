@@ -1,44 +1,44 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { Globe, Mail } from 'lucide-react'
+import { Globe, Mail } from "lucide-react";
+import { motion } from "motion/react";
 
 const team = [
   {
-    role: 'Chairperson',
-    name: 'John Perera',
-    image: 'https://placehold.co/400x400/0A192F/FFFFFF?text=JP',
+    role: "Chairperson",
+    name: "John Perera",
+    image: "https://placehold.co/400x400/0A192F/FFFFFF?text=JP",
   },
   {
-    role: 'Vice Chair',
-    name: 'Sarah Fernando',
-    image: 'https://placehold.co/400x400/00629b/FFFFFF?text=SF',
+    role: "Vice Chair",
+    name: "Sarah Fernando",
+    image: "https://placehold.co/400x400/00629b/FFFFFF?text=SF",
   },
   {
-    role: 'Secretary',
-    name: 'Kavindu Silva',
-    image: 'https://placehold.co/400x400/00b5e2/FFFFFF?text=KS',
+    role: "Secretary",
+    name: "Kavindu Silva",
+    image: "https://placehold.co/400x400/00b5e2/FFFFFF?text=KS",
   },
   {
-    role: 'Treasurer',
-    name: 'Nethmi Jayasinghe',
-    image: 'https://placehold.co/400x400/475569/FFFFFF?text=NJ',
+    role: "Treasurer",
+    name: "Nethmi Jayasinghe",
+    image: "https://placehold.co/400x400/475569/FFFFFF?text=NJ",
   },
   {
-    role: 'Webmaster',
-    name: 'Alex Perera',
-    image: 'https://placehold.co/400x400/0A192F/FFFFFF?text=AP',
+    role: "Webmaster",
+    name: "Alex Perera",
+    image: "https://placehold.co/400x400/0A192F/FFFFFF?text=AP",
   },
   {
-    role: 'Event Coordinator',
-    name: 'Hasini Wijesinghe',
-    image: 'https://placehold.co/400x400/00629b/FFFFFF?text=HW',
+    role: "Event Coordinator",
+    name: "Hasini Wijesinghe",
+    image: "https://placehold.co/400x400/00629b/FFFFFF?text=HW",
   },
-]
+];
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-white relative">
+    <section id="team" className="py-24 bg-light-gray relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex flex-col items-center justify-center mb-4">
@@ -49,21 +49,22 @@ export default function Team() {
             Meet Our Team
           </h3>
           <p className="font-sans text-text-gray text-lg">
-            Dedicated student leaders driving the IEEE Computer Society mission forward.
+            Dedicated student leaders driving the IEEE Computer Society mission
+            forward.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {team.map((member, idx) => (
             <motion.div
-              key={idx}
-              className="group relative"
+              key={member.name}
+              className="group relative h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <div className="bg-light-gray rounded-2xl p-6 text-center border border-border-gray hover:border-ieee-blue hover:shadow-lg transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 text-center border border-border-gray hover:border-ieee-blue hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                 <div className="relative w-24 h-24 mx-auto mb-5 rounded-full overflow-hidden border-4 border-white shadow-sm group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={member.image}
@@ -71,7 +72,7 @@ export default function Team() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 <h4 className="font-display font-bold text-navy text-lg leading-tight mb-1">
                   {member.name}
                 </h4>
@@ -79,11 +80,17 @@ export default function Team() {
                   {member.role}
                 </p>
 
-                <div className="flex items-center justify-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full bg-white border border-border-gray flex items-center justify-center text-text-gray hover:text-ieee-blue hover:border-ieee-blue transition-colors">
+                <div className="flex items-center justify-center gap-3 mt-auto">
+                  <a
+                    href="#team"
+                    className="w-8 h-8 rounded-full bg-light-gray border border-border-gray flex items-center justify-center text-text-gray hover:text-ieee-blue hover:border-ieee-blue transition-colors"
+                  >
                     <Globe size={14} />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-white border border-border-gray flex items-center justify-center text-text-gray hover:text-navy hover:border-navy transition-colors">
+                  <a
+                    href="#team"
+                    className="w-8 h-8 rounded-full bg-light-gray border border-border-gray flex items-center justify-center text-text-gray hover:text-navy hover:border-navy transition-colors"
+                  >
                     <Mail size={14} />
                   </a>
                 </div>
@@ -93,5 +100,5 @@ export default function Team() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6, ease: 'easeOut' },
-}
+  transition: { duration: 0.6, ease: "easeOut" },
+};
 
 export default function Hero() {
   return (
@@ -27,7 +27,7 @@ export default function Hero() {
 
           <motion.h1
             className="font-display font-bold text-navy leading-[1.1] mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
@@ -40,11 +40,13 @@ export default function Hero() {
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            IEEE Computer Society UCSC Student Branch Chapter is a community of passionate students building technical excellence through workshops, hackathons, research, and industry collaborations.
+            IEEE Computer Society UCSC Student Branch Chapter is a community of
+            passionate students building technical excellence through workshops,
+            hackathons, research, and industry collaborations.
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-4 mb-16"
+            className="flex flex-wrap gap-4"
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
@@ -60,25 +62,6 @@ export default function Hero() {
             >
               Join Community
             </a>
-          </motion.div>
-
-          {/* Stats Row */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border-gray"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {[
-              { value: '500+', label: 'Members' },
-              { value: '25+', label: 'Events' },
-              { value: '10+', label: 'Industry Partners' },
-              { value: '5 Years', label: 'Active' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <p className="font-display font-bold text-2xl text-navy">{stat.value}</p>
-                <p className="font-sans text-sm text-text-gray mt-1">{stat.label}</p>
-              </div>
-            ))}
           </motion.div>
         </div>
 
@@ -99,9 +82,9 @@ export default function Hero() {
                 className="rounded-[1.5rem] w-full object-cover aspect-[6/5]"
               />
             </div>
-            
+
             {/* Floating badge */}
-            <motion.div 
+            <motion.div
               className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-border-gray flex items-center gap-4"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -111,13 +94,17 @@ export default function Hero() {
                 🚀
               </div>
               <div>
-                <p className="font-display font-bold text-navy text-sm">Join the</p>
-                <p className="font-sans text-ieee-blue text-xs font-semibold uppercase tracking-wider">Revolution</p>
+                <p className="font-display font-bold text-navy text-sm">
+                  Join the
+                </p>
+                <p className="font-sans text-ieee-blue text-xs font-semibold uppercase tracking-wider">
+                  Revolution
+                </p>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

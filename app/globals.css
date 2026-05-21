@@ -8,7 +8,7 @@
   --border-gray: #e2e8f0;
   --text-gray: #475569;
   --accent-cyan: #00b5e2;
-  
+
   --text-primary: #0a192f;
   --text-secondary: #475569;
 }
@@ -21,16 +21,17 @@
   --color-border-gray: var(--border-gray);
   --color-text-gray: var(--text-gray);
   --color-accent-cyan: var(--accent-cyan);
-  
+
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
-  
+
   --font-sans: var(--font-inter), sans-serif;
   --font-display: var(--font-poppins), sans-serif;
 }
 
 @utility grid-pattern {
-  background-image: linear-gradient(var(--border-gray) 1px, transparent 1px),
+  background-image:
+    linear-gradient(var(--border-gray) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-gray) 1px, transparent 1px);
   background-size: 48px 48px;
 }

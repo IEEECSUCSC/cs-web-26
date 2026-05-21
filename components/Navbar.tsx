@@ -1,65 +1,63 @@
-'use client'
+"use client";
 
-import { cn } from '@/lib/utils'
-import { Menu, X } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'What We Do', href: '#whatwedo' },
-  { label: 'Timeline', href: '#timeline' },
-  { label: 'Events', href: '#events' },
-  { label: 'Team', href: '#team' },
-]
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "What We Do", href: "#whatwedo" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Events", href: "#events" },
+  { label: "Team", href: "#team" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.slice(1))
-    const observers: IntersectionObserver[] = []
+    const sectionIds = navLinks.map((l) => l.href.slice(1));
+    const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (!el) return
+      const el = document.getElementById(id);
+      if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id)
+          if (entry.isIntersecting) setActiveSection(id);
         },
-        { threshold: 0.3 }
-      )
-      obs.observe(el)
-      observers.push(obs)
-    })
+        { threshold: 0.3 },
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
 
-    return () => observers.forEach((o) => o.disconnect())
-  }, [])
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled
-            ? 'bg-white border-b border-border-gray shadow-sm py-3'
-            : 'bg-transparent py-5'
+          "fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-[6px] border-b border-border-gray/50 shadow-sm transition-all duration-300",
+          scrolled ? "py-3" : "py-5",
         )}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 flex-shrink-0">
-            <img 
-              src="/society_logo01.png" 
-              alt="IEEE Computer Society Logo" 
+            <img
+              src="/society_logo01.png"
+              alt="IEEE Computer Society Logo"
               className="h-10 w-auto"
             />
             <div className="hidden sm:block border-l-2 border-border-gray pl-3">
@@ -75,16 +73,16 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.slice(1)
+              const isActive = activeSection === link.href.slice(1);
               return (
                 <a
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'font-sans text-sm font-medium transition-colors duration-200 relative pb-1',
+                    "font-sans text-sm font-medium transition-colors duration-200 relative pb-1",
                     isActive
-                      ? 'text-ieee-blue'
-                      : 'text-text-gray hover:text-navy'
+                      ? "text-ieee-blue"
+                      : "text-text-gray hover:text-navy",
                   )}
                 >
                   {link.label}
@@ -92,7 +90,7 @@ export default function Navbar() {
                     <span className="absolute bottom-0 left-0 w-full h-[2px] bg-ieee-blue rounded-full" />
                   )}
                 </a>
-              )
+              );
             })}
           </nav>
 
@@ -106,10 +104,7 @@ export default function Navbar() {
             </a>
             <button
               onClick={() => setMobileOpen(true)}
-              className={cn(
-                "lg:hidden p-2 rounded-md transition-colors",
-                scrolled ? "text-navy hover:bg-light-gray" : "text-navy bg-white/80 backdrop-blur-md shadow-sm"
-              )}
+              className="lg:hidden p-2 rounded-md transition-colors text-navy hover:bg-light-gray"
               aria-label="Open menu"
             >
               <Menu size={24} />
@@ -159,5 +154,5 @@ export default function Navbar() {
         </div>
       )}
     </>
-  )
+  );
 }

@@ -1,47 +1,60 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { Code2, MonitorPlay, Mic2, FlaskConical, Building2, Trophy } from 'lucide-react'
+import {
+  Building2,
+  Code2,
+  FlaskConical,
+  Mic2,
+  MonitorPlay,
+  Trophy,
+} from "lucide-react";
+import { motion } from "motion/react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.5, ease: 'easeOut' },
-}
+  transition: { duration: 0.5, ease: "easeOut" },
+};
 
 const activities = [
   {
-    title: 'Workshops',
-    description: 'Hands-on technical workshops on AI, Cloud, Cybersecurity, Web Development, and DevOps.',
+    title: "Workshops",
+    description:
+      "Hands-on technical workshops on AI, Cloud, Cybersecurity, Web Development, and DevOps.",
     icon: MonitorPlay,
   },
   {
-    title: 'Hackathons',
-    description: 'Intense coding competitions challenging students to solve real-world problems in 24-48 hours.',
+    title: "Hackathons",
+    description:
+      "Intense coding competitions challenging students to solve real-world problems in 24-48 hours.",
     icon: Code2,
   },
   {
-    title: 'Speaker Sessions',
-    description: 'Insightful talks and seminars by industry leaders and experienced alumni.',
+    title: "Speaker Sessions",
+    description:
+      "Insightful talks and seminars by industry leaders and experienced alumni.",
     icon: Mic2,
   },
   {
-    title: 'Research Programs',
-    description: 'Fostering a culture of academic research and paper publications among undergrads.',
+    title: "Research Programs",
+    description:
+      "Fostering a culture of academic research and paper publications among undergrads.",
     icon: FlaskConical,
   },
   {
-    title: 'Industry Visits',
-    description: 'Exclusive tours to top tech companies bridging the gap between academia and industry.',
+    title: "Industry Visits",
+    description:
+      "Exclusive tours to top tech companies bridging the gap between academia and industry.",
     icon: Building2,
   },
   {
-    title: 'Competitions',
-    description: 'Regular coding challenges, CTFs, and algorithmic contests to sharpen problem-solving skills.',
+    title: "Competitions",
+    description:
+      "Regular coding challenges, CTFs, and algorithmic contests to sharpen problem-solving skills.",
     icon: Trophy,
-  }
-]
+  },
+];
 
 export default function WhatWeDo() {
   return (
@@ -56,7 +69,8 @@ export default function WhatWeDo() {
             What We Do
           </h3>
           <p className="font-sans text-text-gray text-lg">
-            We provide a platform for students to learn, build, and grow through diverse technical and professional initiatives.
+            We provide a platform for students to learn, build, and grow through
+            diverse technical and professional initiatives.
           </p>
         </div>
 
@@ -72,15 +86,15 @@ export default function WhatWeDo() {
             >
               {/* Subtle accent line on top */}
               <div className="absolute top-0 left-0 w-full h-1 bg-light-gray group-hover:bg-ieee-blue transition-colors duration-300" />
-              
+
               <div className="w-14 h-14 rounded-xl bg-light-gray flex items-center justify-center mb-6 group-hover:bg-ieee-blue group-hover:text-white transition-colors duration-300 text-ieee-blue">
                 <item.icon size={28} />
               </div>
-              
+
               <h4 className="font-display font-bold text-xl text-navy mb-3 group-hover:text-ieee-blue transition-colors">
                 {item.title}
               </h4>
-              
+
               <p className="font-sans text-text-gray leading-relaxed">
                 {item.description}
               </p>
@@ -89,5 +103,5 @@ export default function WhatWeDo() {
         </div>
       </div>
     </section>
-  )
+  );
 }
