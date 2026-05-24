@@ -38,7 +38,7 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-light-gray relative">
+    <section id="team" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex flex-col items-center justify-center mb-4">
@@ -64,7 +64,7 @@ export default function Team() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <div className="bg-white rounded-2xl p-6 text-center border border-border-gray hover:border-ieee-blue hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+              <div className="bg-light-gray/50 rounded-2xl p-6 text-center border border-border-gray/50 hover:bg-white hover:border-ieee-blue/40 hover:shadow-[0_20px_50px_rgba(10,25,47,0.05)] hover:-translate-y-1.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full flex flex-col">
                 <div className="relative w-24 h-24 mx-auto mb-5 rounded-full overflow-hidden border-4 border-white shadow-sm group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={member.image}

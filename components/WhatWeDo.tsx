@@ -78,11 +78,11 @@ export default function WhatWeDo() {
           {activities.map((item, idx) => (
             <motion.div
               key={item.title}
-              className="bg-white p-8 rounded-2xl border border-border-gray hover:border-ieee-blue hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+              className="bg-white p-8 rounded-2xl border border-border-gray/50 hover:border-ieee-blue/40 shadow-sm hover:shadow-[0_20px_50px_rgba(10,25,47,0.05)] hover:-translate-y-1.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group relative overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
               {/* Subtle accent line on top */}
               <div className="absolute top-0 left-0 w-full h-1 bg-light-gray group-hover:bg-ieee-blue transition-colors duration-300" />

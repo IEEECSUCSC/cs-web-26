@@ -19,7 +19,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-light-gray">
+    <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Image */}
@@ -105,7 +105,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-border-gray">
+            <div className="bg-light-gray p-6 rounded-2xl border border-border-gray/60">
               <p className="font-display font-medium text-navy">
                 &ldquo;Empowering students to become the technology leaders of
                 tomorrow through hands-on learning and global networking.&rdquo;

@@ -103,7 +103,7 @@ export default function Events() {
               {filteredEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-white rounded-2xl border border-border-gray overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col"
+                  className="bg-white rounded-2xl border border-border-gray/50 overflow-hidden group shadow-sm hover:shadow-[0_20px_50px_rgba(10,25,47,0.05)] hover:-translate-y-1.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col"
                 >
                   <div className="relative overflow-hidden aspect-[3/2]">
                     <img

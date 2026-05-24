@@ -1,16 +1,23 @@
 "use client";
 
+import { motion } from "motion/react";
 import {
-  Globe,
   Mail,
-  MapPin,
-  MessageCircle,
   Phone,
+  MapPin,
   Send,
+  Globe,
+  MessageCircle,
   Share2,
   Users,
 } from "lucide-react";
-import { motion } from "motion/react";
+
+const socialLinks = [
+  { Icon: Globe, key: "globe", href: "#contact" },
+  { Icon: MessageCircle, key: "message", href: "#contact" },
+  { Icon: Share2, key: "share", href: "#contact" },
+  { Icon: Users, key: "users", href: "#contact" },
+];
 
 export default function Contact() {
   return (
@@ -44,7 +51,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="h-full"
           >
-            <form className="bg-white p-10 rounded-2xl border border-border-gray/50 shadow-lg shadow-navy/[0.03] space-y-8 h-full flex flex-col justify-between">
+            <form className="bg-white p-10 md:p-12 rounded-3xl border border-navy/[0.02] shadow-[0_20px_50px_rgba(10,25,47,0.04)] space-y-10 h-full flex flex-col justify-between">
               <div className="space-y-8">
                 <div className="space-y-2">
                   <label
@@ -57,7 +64,7 @@ export default function Contact() {
                     type="text"
                     id="name"
                     placeholder="John Doe"
-                    className="w-full px-5 py-4 rounded-xl border border-border-gray bg-light-gray focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans"
+                    className="w-full px-6 py-[18px] rounded-2xl border border-border-gray/80 bg-light-gray/70 focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans"
                   />
                 </div>
 
@@ -72,7 +79,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     placeholder="john@example.com"
-                    className="w-full px-5 py-4 rounded-xl border border-border-gray bg-light-gray focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans"
+                    className="w-full px-6 py-[18px] rounded-2xl border border-border-gray/80 bg-light-gray/70 focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans"
                   />
                 </div>
 
@@ -87,15 +94,15 @@ export default function Contact() {
                     id="message"
                     rows={5}
                     placeholder="How can we help you?"
-                    className="w-full px-5 py-4 rounded-xl border border-border-gray bg-light-gray focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans resize-none"
+                    className="w-full px-6 py-[18px] rounded-2xl border border-border-gray/80 bg-light-gray/70 focus:bg-white focus:outline-none focus:border-ieee-blue focus:ring-1 focus:ring-ieee-blue transition-all font-sans resize-none"
                   />
                 </div>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-6">
                 <button
                   type="button"
-                  className="w-full bg-ieee-blue text-white font-sans font-semibold py-4 rounded-xl hover:bg-navy transition-colors duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full bg-ieee-blue text-white font-sans font-semibold py-4.5 rounded-2xl hover:bg-navy transition-colors duration-300 flex items-center justify-center gap-2 group cursor-pointer shadow-md hover:shadow-lg"
                 >
                   Send Message{" "}
                   <Send
@@ -115,16 +122,16 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="h-full"
           >
-            <div className="bg-white p-10 rounded-2xl border border-border-gray/50 shadow-lg shadow-navy/[0.03] h-full flex flex-col justify-between">
+            <div className="bg-white p-10 md:p-12 rounded-3xl border border-navy/[0.02] shadow-[0_20px_50px_rgba(10,25,47,0.04)] h-full flex flex-col justify-between">
               <div>
-                <h4 className="font-display font-bold text-2xl text-navy mb-10">
+                <h4 className="font-display font-bold text-2xl text-navy mb-12">
                   Contact Information
                 </h4>
 
-                <div className="space-y-10">
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0">
-                      <Mail size={22} />
+                <div className="space-y-12">
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0 shadow-sm transition-transform duration-300 hover:scale-105">
+                      <Mail size={24} />
                     </div>
                     <div>
                       <p className="font-sans text-sm font-semibold text-text-gray mb-1">
@@ -132,16 +139,16 @@ export default function Contact() {
                       </p>
                       <a
                         href="mailto:ieeecs@ucsc.cmb.ac.lk"
-                        className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors"
+                        className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors text-lg"
                       >
                         ieeecs@ucsc.cmb.ac.lk
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0">
-                      <Phone size={22} />
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0 shadow-sm transition-transform duration-300 hover:scale-105">
+                      <Phone size={24} />
                     </div>
                     <div>
                       <p className="font-sans text-sm font-semibold text-text-gray mb-1">
@@ -149,22 +156,22 @@ export default function Contact() {
                       </p>
                       <a
                         href="tel:+94771234567"
-                        className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors"
+                        className="font-sans font-medium text-navy hover:text-ieee-blue transition-colors text-lg"
                       >
                         +94 77 123 4567
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0">
-                      <MapPin size={22} />
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-full bg-light-gray flex items-center justify-center text-ieee-blue flex-shrink-0 shadow-sm transition-transform duration-300 hover:scale-105">
+                      <MapPin size={24} />
                     </div>
                     <div>
                       <p className="font-sans text-sm font-semibold text-text-gray mb-1">
                         Location
                       </p>
-                      <p className="font-sans font-medium text-navy leading-relaxed">
+                      <p className="font-sans font-medium text-navy leading-relaxed text-lg">
                         University of Colombo School of Computing,
                         <br />
                         UCSC
@@ -174,16 +181,16 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-border-gray/50">
-                <p className="font-sans text-sm font-semibold text-text-gray mb-4">
+              <div className="mt-16 pt-10 border-t border-border-gray/50">
+                <p className="font-sans text-sm font-semibold text-text-gray mb-6">
                   Follow Us
                 </p>
-                <div className="flex items-center gap-4">
-                  {[Globe, MessageCircle, Share2, Users].map((Icon, i) => (
+                <div className="flex items-center gap-5">
+                  {socialLinks.map(({ Icon, key, href }) => (
                     <a
-                      key={i}
-                      href="#contact"
-                      className="w-12 h-12 rounded-full bg-light-gray flex items-center justify-center text-navy hover:bg-ieee-blue hover:text-white transition-all duration-300"
+                      key={key}
+                      href={href}
+                      className="w-12 h-12 rounded-full bg-light-gray flex items-center justify-center text-navy hover:bg-ieee-blue hover:text-white transition-all duration-300 hover:scale-105 shadow-sm"
                     >
                       <Icon size={20} />
                     </a>

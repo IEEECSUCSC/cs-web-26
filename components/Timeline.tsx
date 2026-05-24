@@ -43,10 +43,7 @@ export default function Timeline() {
   });
 
   return (
-    <section
-      id="timeline"
-      className="py-24 bg-light-gray relative overflow-hidden"
-    >
+    <section id="timeline" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <div className="flex flex-col items-center justify-center mb-4">
