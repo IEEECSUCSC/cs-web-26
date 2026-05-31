@@ -49,10 +49,10 @@ export default function Team({ members }: TeamProps) {
             Team details will be announced soon.
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {members.map((member, idx) => {
               const photoUrl = member.photo
-                ? urlFor(member.photo).width(240).height(240).fit("crop").url()
+                ? urlFor(member.photo).width(520).height(680).fit("crop").url()
                 : getFallbackImage(member.name);
               return (
                 <motion.div
@@ -61,49 +61,48 @@ export default function Team({ members }: TeamProps) {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
                 >
-                  <div className="bg-light-gray/50 border-border-gray/50 hover:border-ieee-blue/40 flex h-full flex-col rounded-2xl border p-6 text-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_20px_50px_rgba(10,25,47,0.05)]">
-                    <div className="relative mx-auto mb-5 h-24 w-24 overflow-hidden rounded-full border-4 border-white shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <div className="border-border-gray/70 flex h-full flex-col rounded-2xl border bg-white shadow-sm transition-shadow duration-300 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
+                    <div className="aspect-3/4 overflow-hidden rounded-2xl">
                       <img
                         src={photoUrl}
                         alt={member.name}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                       />
                     </div>
 
-                    <h4 className="font-display text-navy mb-1 text-lg leading-tight font-bold">
-                      {member.name}
-                    </h4>
-                    <p className="text-ieee-blue mb-3 font-sans text-xs font-semibold tracking-wider uppercase">
-                      {member.role}
-                    </p>
-                    {member.bio ? (
-                      <p className="text-text-gray mb-4 font-sans text-xs">
-                        {member.bio}
+                    <div className="px-4 pb-4 pt-5 text-left">
+                      <h4 className="font-display text-navy text-base font-semibold">
+                        {member.name}
+                      </h4>
+                      <p className="text-text-gray font-sans text-sm">
+                        {member.role}
                       </p>
-                    ) : null}
 
-                    {(member.socials?.website || member.socials?.email) && (
-                      <div className="mt-auto flex items-center justify-center gap-3">
-                        {member.socials?.website ? (
-                          <a
-                            href={member.socials.website}
-                            className="bg-light-gray border-border-gray text-text-gray hover:text-ieee-blue hover:border-ieee-blue flex h-8 w-8 items-center justify-center rounded-full border transition-colors"
-                          >
-                            <Globe size={14} />
-                          </a>
-                        ) : null}
-                        {member.socials?.email ? (
-                          <a
-                            href={`mailto:${member.socials.email}`}
-                            className="bg-light-gray border-border-gray text-text-gray hover:text-navy hover:border-navy flex h-8 w-8 items-center justify-center rounded-full border transition-colors"
-                          >
-                            <Mail size={14} />
-                          </a>
-                        ) : null}
-                      </div>
-                    )}
+                      {(member.socials?.website || member.socials?.email) && (
+                        <div className="mt-3 flex items-center gap-4">
+                          {member.socials?.website ? (
+                            <a
+                              href={member.socials.website}
+                              aria-label={`${member.name} website`}
+                              className="text-text-gray hover:text-navy transition-colors"
+                            >
+                              <Globe size={16} />
+                            </a>
+                          ) : null}
+                          {member.socials?.email ? (
+                            <a
+                              href={`mailto:${member.socials.email}`}
+                              aria-label={`Email ${member.name}`}
+                              className="text-text-gray hover:text-navy transition-colors"
+                            >
+                              <Mail size={16} />
+                            </a>
+                          ) : null}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               );
