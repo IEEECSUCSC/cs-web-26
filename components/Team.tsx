@@ -72,7 +72,7 @@ export default function Team({ members }: TeamProps) {
                       />
                     </div>
 
-                    <div className="px-4 pb-4 pt-5 text-left">
+                    <div className="px-4 pt-5 pb-4 text-left">
                       <h4 className="font-display text-navy text-base font-semibold">
                         {member.name}
                       </h4>
