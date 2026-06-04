@@ -19,9 +19,9 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left: Image */}
           <motion.div
             className="relative"
@@ -30,61 +30,60 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="rounded-3xl overflow-hidden bg-light-gray aspect-[4/3] border border-border-gray relative z-10 shadow-sm">
+            <div className="bg-light-gray border-border-gray relative z-10 aspect-[4/3] overflow-hidden rounded-3xl border shadow-sm">
               <img
                 src="/img02.jpg"
                 alt="Students collaborating in seminar"
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
             {/* Decorative background block */}
-            <div className="absolute -bottom-6 -right-6 w-full h-full bg-white rounded-3xl -z-10 border border-border-gray" />
-
+            <div className="border-border-gray absolute -right-6 -bottom-6 -z-10 h-full w-full rounded-3xl border bg-white" />
           </motion.div>
 
           {/* Right: Text Content */}
           <motion.div
-            className="lg:pl-8 pt-8 lg:pt-0"
+            className="pt-8 lg:pt-0 lg:pl-8"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-block mb-4">
+            <div className="mb-4 inline-block">
               <h2 className="section-label mb-2">About Us</h2>
               <div className="blue-divider" />
             </div>
 
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-navy mb-6 leading-tight">
+            <h3 className="font-display text-navy mb-6 text-3xl leading-tight font-bold md:text-4xl">
               Advancing Computing Knowledge & Innovation
             </h3>
 
-            <p className="font-sans text-text-gray text-lg leading-relaxed mb-8">
+            <p className="text-text-gray mb-8 font-sans text-lg leading-relaxed">
               We are the official IEEE Computer Society chapter of UCSC
               dedicated to advancing computing knowledge, innovation,
               leadership, and collaboration among students. Our mission is to
               bridge the gap between academic learning and industry demands.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="mb-10 grid gap-4 sm:grid-cols-2">
               {highlights.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-ieee-blue/10 flex items-center justify-center">
+                  <div className="bg-ieee-blue/10 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full">
                     <CheckCircle2 size={16} className="text-ieee-blue" />
                   </div>
-                  <span className="font-sans text-navy font-medium">
+                  <span className="text-navy font-sans font-medium">
                     {item}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-light-gray p-6 rounded-2xl border border-border-gray/60">
-              <p className="font-display font-medium text-navy">
+            <div className="bg-light-gray border-border-gray/60 rounded-2xl border p-6">
+              <p className="font-display text-navy font-medium">
                 &ldquo;Empowering students to become the technology leaders of
                 tomorrow through hands-on learning and global networking.&rdquo;
               </p>
-              <p className="font-sans text-sm text-text-gray mt-2 font-semibold uppercase tracking-wider">
+              <p className="text-text-gray mt-2 font-sans text-sm font-semibold tracking-wider uppercase">
                 — IEEE CS Chapter
               </p>
             </div>

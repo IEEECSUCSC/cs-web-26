@@ -13,20 +13,20 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-24 bg-light-gray grid-pattern overflow-hidden flex flex-col justify-center"
+      className="bg-light-gray grid-pattern relative flex min-h-screen flex-col justify-center overflow-hidden pt-24"
     >
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-6 py-12 md:py-20 lg:flex-row lg:gap-16">
         {/* Left Content */}
-        <div className="flex-1 max-w-2xl w-full">
+        <div className="w-full max-w-2xl flex-1">
           <motion.div {...fadeUp} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 border border-border-gray bg-white rounded-full px-4 py-1.5 text-sm font-medium text-ieee-blue mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-accent-cyan inline-block animate-pulse" />
+            <span className="border-border-gray text-ieee-blue mb-6 inline-flex items-center gap-2 rounded-full border bg-white px-4 py-1.5 text-sm font-medium shadow-sm">
+              <span className="bg-accent-cyan inline-block h-2 w-2 animate-pulse rounded-full" />
               UCSC Student Branch Chapter
             </span>
           </motion.div>
 
           <motion.h1
-            className="font-display font-bold text-navy leading-[1.1] mb-6"
+            className="font-display text-navy mb-6 leading-[1.1] font-bold"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -36,7 +36,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-text-gray text-lg md:text-xl leading-relaxed max-w-xl mb-10 font-sans"
+            className="text-text-gray mb-10 max-w-xl font-sans text-lg leading-relaxed md:text-xl"
             {...fadeUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -52,13 +52,13 @@ export default function Hero() {
           >
             <a
               href="#events"
-              className="inline-flex items-center justify-center bg-ieee-blue text-white font-sans font-semibold px-8 py-3.5 rounded-full hover:bg-navy transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              className="bg-ieee-blue hover:bg-navy inline-flex items-center justify-center rounded-full px-8 py-3.5 font-sans font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
               Explore Events
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center bg-white border-2 border-border-gray text-navy font-sans font-semibold px-8 py-3.5 rounded-full hover:border-ieee-blue hover:text-ieee-blue transition-all duration-300"
+              className="border-border-gray text-navy hover:border-ieee-blue hover:text-ieee-blue inline-flex items-center justify-center rounded-full border-2 bg-white px-8 py-3.5 font-sans font-semibold transition-all duration-300"
             >
               Join Community
             </a>
@@ -66,7 +66,7 @@ export default function Hero() {
         </div>
 
         {/* Right Illustration/Image */}
-        <div className="flex-1 w-full relative flex items-center justify-center min-h-[400px]">
+        <div className="relative flex min-h-[400px] w-full flex-1 items-center justify-center">
           <motion.div
             className="relative z-10 w-full max-w-[500px]"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -74,30 +74,30 @@ export default function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="rounded-[2rem] bg-white p-2 shadow-xl border border-border-gray relative">
-              <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] bg-ieee-blue" />
+            <div className="border-border-gray relative rounded-[2rem] border bg-white p-2 shadow-xl">
+              <div className="bg-ieee-blue absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem]" />
               <img
                 src="/img01.jpg"
                 alt="Students collaborating"
-                className="rounded-[1.5rem] w-full object-cover aspect-[6/5]"
+                className="aspect-[6/5] w-full rounded-[1.5rem] object-cover"
               />
             </div>
 
             {/* Floating badge */}
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-border-gray flex items-center gap-4"
+              className="border-border-gray absolute -bottom-6 -left-6 flex items-center gap-4 rounded-2xl border bg-white p-4 shadow-lg"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <div className="w-12 h-12 rounded-full bg-light-gray flex items-center justify-center text-2xl">
+              <div className="bg-light-gray flex h-12 w-12 items-center justify-center rounded-full text-2xl">
                 🚀
               </div>
               <div>
-                <p className="font-display font-bold text-navy text-sm">
+                <p className="font-display text-navy text-sm font-bold">
                   Join the
                 </p>
-                <p className="font-sans text-ieee-blue text-xs font-semibold uppercase tracking-wider">
+                <p className="text-ieee-blue font-sans text-xs font-semibold tracking-wider uppercase">
                   Revolution
                 </p>
               </div>
