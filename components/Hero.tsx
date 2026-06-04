@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="rounded-[2rem] bg-white p-2 shadow-xl border border-border-gray relative">
               <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] bg-ieee-blue" />
               <img
-                src="https://placehold.co/600x500/0A192F/FFFFFF?text=Students+Coding/Workshop"
+                src="/img01.jpg"
                 alt="Students collaborating"
                 className="rounded-[1.5rem] w-full object-cover aspect-[6/5]"
               />

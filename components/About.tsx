@@ -32,7 +32,7 @@ export default function About() {
           >
             <div className="rounded-3xl overflow-hidden bg-light-gray aspect-[4/3] border border-border-gray relative z-10 shadow-sm">
               <img
-                src="https://placehold.co/800x600/F8FAFC/0A192F?text=Students+Working+Together"
+                src="/img02.jpg"
                 alt="Students collaborating in seminar"
                 className="w-full h-full object-cover"
               />
@@ -40,32 +40,6 @@ export default function About() {
             {/* Decorative background block */}
             <div className="absolute -bottom-6 -right-6 w-full h-full bg-white rounded-3xl -z-10 border border-border-gray" />
 
-            {/* Floating stats cards */}
-            <motion.div
-              className="absolute -bottom-10 left-10 bg-white p-5 rounded-2xl shadow-lg border border-border-gray flex gap-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <div>
-                <p className="font-display font-bold text-ieee-blue text-2xl">
-                  2021
-                </p>
-                <p className="font-sans text-text-gray text-xs font-semibold uppercase tracking-wider mt-1">
-                  Founded
-                </p>
-              </div>
-              <div className="w-px bg-border-gray" />
-              <div>
-                <p className="font-display font-bold text-ieee-blue text-2xl">
-                  500+
-                </p>
-                <p className="font-sans text-text-gray text-xs font-semibold uppercase tracking-wider mt-1">
-                  Members
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: Text Content */}
